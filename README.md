@@ -1,1 +1,1 @@
-# regret_matching
+# Regret Matching
