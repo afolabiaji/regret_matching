@@ -16,6 +16,10 @@ def add_actions_to_agent(agent:Type[Agent]) -> Type[Agent]:
     agent.update_regret(action_1, action_2)
     return agent
 
+def test_len_actions_equals_strategy() -> None:
+    agent = init_agent()
+    assert agent.num_actions == len(agent.strategy)
+    
 def test_init_strategy() -> None:
     agent = init_agent()
     assert np.array_equiv(agent.strategy, np.repeat(1/NUM_ACTIONS, NUM_ACTIONS))
