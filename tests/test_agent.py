@@ -1,15 +1,16 @@
 import sys
+from typing import Type
 import numpy as np
 from os.path import dirname, abspath
 sys.path.append(dirname(dirname(abspath(__file__))))
 from agent import Agent
 from constants import NUM_ACTIONS
 
-def init_agent() -> Agent:
+def init_agent() -> Type[Agent]:
     agent = Agent()
     return agent
 
-def add_actions_to_agent(agent:Agent) -> Agent:
+def add_actions_to_agent(agent:Type[Agent]) -> Type[Agent]:
     action_1 = 0
     action_2 = 0
     agent.update_regret(action_1, action_2)
